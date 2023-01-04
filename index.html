@@ -5,49 +5,55 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
       <script src="script.js" defer></script>
+      <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
       <link rel="icon" href="icon.ico">
       <title>Logistics 1</title>
       <meta name="keywords" content="Logistics, counter, distribution, product counter, product searcher">
-      <meta name="description" content="Logistics assistance program for the distribution of products to different destinations.">
+      <meta name="description"
+         content="Logistics assistance program for the distribution of products to different destinations.">
       <meta name="author" content="TinF9">
    </head>
-
    <body>
-      <div class="flex-container">
+      <div class="batch-selection" id="batchSelection">
+         <form>
+            <label class="button file-input_label">Choose a file to work with<br>(.xlsx, .xls)
+               <input type="file" accept=".xlsx,.xls" id="fileInput" class="file-input" />
+            </label>
+         </form>
+      </div>
+   
+      <div class="flex-container" id="flexContainer">
          <div class="flex-container__item1">
             <div class="sticky-container">
+               <div class="batch-indicator" id="batchIndicator"></div>
                <h1>Product Selection</h1>
-
                <form id="form1">
-                  <input list="optionsList" id="searcher" class="searcher"
-                  name="searcher" autocomplete="off" spellcheck="false" placeholder="Search product">
+                  <input list="optionsList" id="searcher" class="searcher" name="searcher" autocomplete="off"
+                     spellcheck="false" placeholder="Search product">
                   <datalist id="optionsList" class="listClass">
                   </datalist>
                </form>
-
                <p id="productDetails"></p>
                <div class="alert alert--fully-placed">Fully Placed</div>
                <div class="alert alert--overstock">Overstocked</div>
-
                <div>
                   <button id="button1" class="button">
-                  Place product</button>
+                     Place product</button>
                   <button id="button2" class="button">
-                  Remove product</button>
+                     Remove product</button>
                </div>
                <div>
                   <button id="button3" class="button">
-                  Reset all counts</button>
+                     Reset all counts</button>
                   <button id="button4" class="button">
-                  Reset this product only</button>
+                     Reset this product only</button>
                </div>
                <div>
                   <button id="button5" class="button">
-                  Print table</button>
+                     Print table</button>
                </div>
             </div>
          </div>
-
          <div class="flex-container__item2">
             <table id="table" class="table">
                <tr class="table__header">
