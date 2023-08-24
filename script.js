@@ -2,6 +2,7 @@ const batchSelection = document.getElementById("batchSelection");
 const flexContainer = document.querySelector(".flex-container");
 const fileInput = document.getElementById("fileInput");
 const batchIndicator = document.getElementById("batchIndicator");
+const body = document.getElementById("body");
 const excelProducts = [];
 let products = "";
 
@@ -27,6 +28,7 @@ fileInput.addEventListener("change", async function () {
 
   batchIndicator.innerHTML = `<p style="color:#888;">Working with: '${fileName}' batch.</p>`;
 
+  body.classList.replace("body--backImage", "body--backColor");
   batchSelection.style.display = "none";
   flexContainer.style.display = "flex";
 });
